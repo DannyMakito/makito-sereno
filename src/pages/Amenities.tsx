@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -23,6 +24,42 @@ export default function Amenities() {
     
     return icons[categoryName as keyof typeof icons]?.[index] || <Coffee />;
   };
+
+  // Gallery images with proper Unsplash URLs
+  const galleryImages = [
+    {
+      src: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&h=400&fit=crop&crop=center",
+      alt: "Luxury hotel pool area"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=400&fit=crop&crop=center",
+      alt: "Beachfront resort view"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=400&fit=crop&crop=center",
+      alt: "Hotel spa and wellness center"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop&crop=center",
+      alt: "Luxury apartment interior"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=400&fit=crop&crop=center",
+      alt: "Restaurant dining area"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=400&fit=crop&crop=center",
+      alt: "Modern apartment living room"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop&crop=center",
+      alt: "Ocean view from balcony"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=400&h=400&fit=crop&crop=center",
+      alt: "Beach bar and lounge area"
+    }
+  ];
   
   return (
     <div className="min-h-screen flex flex-col">
@@ -34,7 +71,7 @@ export default function Amenities() {
           <div className="container relative z-10 pt-20">
             <div className="text-center max-w-3xl mx-auto">
               <span className="text-sm text-primary font-medium uppercase tracking-wider">
-                MareSereno
+                MakiSereno
               </span>
               <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
                 {t.amenitiesPage.title}
@@ -108,20 +145,21 @@ export default function Amenities() {
                 {t.gallery.title}
               </h2>
               <p className="text-muted-foreground">
-                {t.gallery.subtitle}
+                Explore our seaside paradise through captivating imagery.
               </p>
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {Array.from({ length: 8 }).map((_, index) => (
+              {galleryImages.map((image, index) => (
                 <div 
                   key={index} 
-                  className="aspect-square rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105"
+                  className="aspect-square rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105 cursor-pointer"
                 >
                   <img 
-                    src={`https://images.unsplash.com/photo-${1550000000000 + index * 100000}?w=400&h=400&fit=crop`}
-                    alt={`Amenity ${index + 1}`}
+                    src={image.src}
+                    alt={image.alt}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
               ))}
