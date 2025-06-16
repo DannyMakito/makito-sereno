@@ -20,7 +20,7 @@ const allApartments: ApartmentProps[] = [
     id: "1",
     name: "Deluxe Sea View Suite",
     description: "Luxurious suite with panoramic sea views, modern amenities, and a private balcony.",
-    price: 180,
+    price: 2800,
     capacity: 2,
     size: 45,
     image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop",
@@ -31,7 +31,7 @@ const allApartments: ApartmentProps[] = [
     id: "2",
     name: "Premium Family Apartment",
     description: "Spacious apartment ideal for families, with full kitchen and stunning coastal views.",
-    price: 250,
+    price: 4200,
     capacity: 4,
     size: 75,
     image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop",
@@ -42,7 +42,7 @@ const allApartments: ApartmentProps[] = [
     id: "3",
     name: "Executive Beach Studio",
     description: "Elegant studio with direct beach access, modern design, and premium finishes.",
-    price: 150,
+    price: 2100,
     capacity: 2,
     size: 35,
     image: "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&h=600&fit=crop",
@@ -53,7 +53,7 @@ const allApartments: ApartmentProps[] = [
     id: "4",
     name: "Luxury Penthouse Suite",
     description: "Exclusive top-floor suite with expansive terrace and panoramic sea views.",
-    price: 350,
+    price: 7000,
     capacity: 4,
     size: 90,
     image: "https://images.unsplash.com/photo-1562438668-bcf0ca6578f0?w=800&h=600&fit=crop",
@@ -64,7 +64,7 @@ const allApartments: ApartmentProps[] = [
     id: "5",
     name: "Classic Double Room",
     description: "Comfortable hotel room with modern amenities and partial sea views.",
-    price: 120,
+    price: 1400,
     capacity: 2,
     size: 28,
     image: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&h=600&fit=crop",
@@ -75,7 +75,7 @@ const allApartments: ApartmentProps[] = [
     id: "6",
     name: "Garden View Apartment",
     description: "Peaceful apartment surrounded by lush gardens, just a short walk from the beach.",
-    price: 160,
+    price: 1750,
     capacity: 3,
     size: 55,
     image: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=800&h=600&fit=crop",
@@ -89,7 +89,7 @@ export default function Apartments() {
   const [filteredApartments, setFilteredApartments] = useState<ApartmentProps[]>(allApartments);
   const [capacityFilter, setCapacityFilter] = useState<string>("all");
   const [locationFilter, setLocationFilter] = useState<string>("all");
-  const [priceRange, setPriceRange] = useState<number[]>([100, 350]);
+  const [priceRange, setPriceRange] = useState<number[]>([1400, 7000]);
   
   useEffect(() => {
     // Scroll to top when component mounts
@@ -189,13 +189,13 @@ export default function Apartments() {
               {/* Price Range Filter */}
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  {t.apartments.filters.priceRange}: ${priceRange[0]} - ${priceRange[1]}
+                  {t.apartments.filters.priceRange}: R{priceRange[0]} - R{priceRange[1]}
                 </label>
                 <Slider
-                  defaultValue={[100, 350]}
-                  min={100}
-                  max={350}
-                  step={10}
+                  defaultValue={[1400, 7000]}
+                  min={1400}
+                  max={7000}
+                  step={100}
                   value={priceRange}
                   onValueChange={setPriceRange}
                   className="my-4"
@@ -212,7 +212,7 @@ export default function Apartments() {
                 onClick={() => {
                   setCapacityFilter("all");
                   setLocationFilter("all");
-                  setPriceRange([100, 350]);
+                  setPriceRange([1400, 7000]);
                 }}
               >
                 {t.apartments.filters.resetFilters}
@@ -241,7 +241,7 @@ export default function Apartments() {
                   onClick={() => {
                     setCapacityFilter("all");
                     setLocationFilter("all");
-                    setPriceRange([100, 350]);
+                    setPriceRange([1400, 7000]);
                   }}
                 >
                   {t.apartments.filters.resetFilters}

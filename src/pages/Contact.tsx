@@ -92,9 +92,9 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold mb-1">{t.contact.address}</h3>
                       <p className="text-muted-foreground">
-                        123 Seaside Boulevard<br />
-                        Costa Bella, 12345<br />
-                        Italy
+                        45 Ocean View Drive<br />
+                        Camps Bay, Cape Town<br />
+                        8040, South Africa
                       </p>
                     </div>
                   </div>
@@ -105,8 +105,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">{t.contact.phone}</h3>
-                      <p className="text-muted-foreground">+39 123 4567 890</p>
-                      <p className="text-muted-foreground">+39 098 7654 321 (Reservations)</p>
+                      <p className="text-muted-foreground">+27 21 438 9876</p>
+                      <p className="text-muted-foreground">+27 21 438 1234 (Reservations)</p>
                     </div>
                   </div>
                   
@@ -138,7 +138,7 @@ export default function Contact() {
                 
                 <div className="aspect-video rounded-xl overflow-hidden">
                   <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.03606358136!2d14.165818971864153!3d40.85529294646443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b0a3c328d896b%3A0x309e11f99628150!2sGulf%20of%20Naples!5e0!3m2!1sen!2sus!4v1628613152777!5m2!1sen!2sus" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.186089736598!2d18.37734451521225!3d-33.955273180636276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5d1b2db5d5e7%3A0x1da8de84e1a7e4f0!2sCamps%20Bay%2C%20Cape%20Town%2C%20South%20Africa!5e0!3m2!1sen!2sus!4v1628613152777!5m2!1sen!2sus" 
                     width="100%" 
                     height="100%" 
                     style={{ border: 0 }} 
@@ -191,7 +191,7 @@ export default function Contact() {
                             name="phone"
                             value={formData.phone}
                             onChange={handleInputChange}
-                            placeholder="+1 234 567 8900" 
+                            placeholder="+27 82 123 4567" 
                           />
                         </div>
                         
