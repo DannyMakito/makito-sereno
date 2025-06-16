@@ -31,7 +31,7 @@ const apartmentsData: ApartmentProps[] = [
     id: "1",
     name: "Deluxe Sea View Suite",
     description: "Luxurious suite with panoramic sea views, modern amenities, and a private balcony.",
-    price: 180,
+    price: 3200,
     capacity: 2,
     size: 45,
     image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop",
@@ -42,7 +42,7 @@ const apartmentsData: ApartmentProps[] = [
     id: "2",
     name: "Premium Family Apartment",
     description: "Spacious apartment ideal for families, with full kitchen and stunning coastal views.",
-    price: 250,
+    price: 4500,
     capacity: 4,
     size: 75,
     image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop",
@@ -53,7 +53,7 @@ const apartmentsData: ApartmentProps[] = [
     id: "3",
     name: "Executive Beach Studio",
     description: "Elegant studio with direct beach access, modern design, and premium finishes.",
-    price: 150,
+    price: 2700,
     capacity: 2,
     size: 35,
     image: "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&h=600&fit=crop",
@@ -368,7 +368,7 @@ export default function BookingPage() {
                         </div>
                         <div className="flex items-center justify-between mt-4">
                           <div>
-                            <span className="text-xl font-bold">${apartment.price}</span>
+                            <span className="text-xl font-bold">R{apartment.price}</span>
                             <span className="text-muted-foreground text-sm"> / night</span>
                           </div>
                           <Button 
@@ -615,24 +615,24 @@ export default function BookingPage() {
                           <div className="py-4 border-b space-y-2">
                             <div className="flex justify-between items-center">
                               <span>
-                                ${selectedApartment.price} x {nightsCount} {nightsCount === 1 ? "night" : "nights"}
+                                R{selectedApartment.price} x {nightsCount} {nightsCount === 1 ? "night" : "nights"}
                               </span>
-                              <span className="font-medium">${selectedApartment.price * nightsCount}</span>
+                              <span className="font-medium">R{selectedApartment.price * nightsCount}</span>
                             </div>
                             <div className="flex justify-between items-center">
                               <span>Cleaning fee</span>
-                              <span className="font-medium">$50</span>
+                              <span className="font-medium">R900</span>
                             </div>
                             <div className="flex justify-between items-center">
                               <span>Service fee</span>
-                              <span className="font-medium">$30</span>
+                              <span className="font-medium">R550</span>
                             </div>
                           </div>
                           
                           <div className="pt-4">
                             <div className="flex justify-between items-center font-bold">
                               <span>Total</span>
-                              <span>${totalPrice + 50 + 30}</span>
+                              <span>R{totalPrice + 900 + 550}</span>
                             </div>
                           </div>
                         </>
@@ -774,21 +774,21 @@ export default function BookingPage() {
                           <>
                             <div className="flex justify-between items-center">
                               <span>
-                                ${selectedApartment.price} x {nightsCount} {nightsCount === 1 ? "night" : "nights"}
+                                R{selectedApartment.price} x {nightsCount} {nightsCount === 1 ? "night" : "nights"}
                               </span>
-                              <span className="font-medium">${selectedApartment.price * nightsCount}</span>
+                              <span className="font-medium">R{selectedApartment.price * nightsCount}</span>
                             </div>
                             <div className="flex justify-between items-center">
                               <span>Cleaning fee</span>
-                              <span className="font-medium">$50</span>
+                              <span className="font-medium">R900</span>
                             </div>
                             <div className="flex justify-between items-center">
                               <span>Service fee</span>
-                              <span className="font-medium">$30</span>
+                              <span className="font-medium">R550</span>
                             </div>
                             <div className="flex justify-between items-center pt-4 border-t mt-4">
                               <span className="font-semibold">Total</span>
-                              <span className="font-bold text-xl">${totalPrice + 50 + 30}</span>
+                              <span className="font-bold text-xl">R{totalPrice + 900 + 550}</span>
                             </div>
                           </>
                         )}
@@ -834,7 +834,7 @@ export default function BookingPage() {
                       Your reservation has been successfully confirmed. A confirmation email has been sent to {formData.email}.
                     </p>
                     <p className="font-medium mb-8">
-                      Booking Reference: <span className="text-primary">MRS-{Math.floor(Math.random() * 10000).toString().padStart(4, '0')}</span>
+                      Booking Reference: <span className="text-primary">MKS-{Math.floor(Math.random() * 10000).toString().padStart(4, '0')}</span>
                     </p>
                     <Button asChild className="btn-primary">
                       <Link to="/">Return to Homepage</Link>
