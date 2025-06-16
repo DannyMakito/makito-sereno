@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -12,7 +11,7 @@ export default function Footer() {
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div className="animate-fade-in [animation-delay:100ms]">
-            <h4 className="text-xl font-bold mb-4">MareSereno</h4>
+            <h4 className="text-xl font-bold mb-4">MakiSereno</h4>
             <p className="text-muted-foreground mb-4">
               {t.footer.description}
             </p>
@@ -100,7 +99,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-border pt-8 mt-8 text-center text-muted-foreground">
-          <p>&copy; {currentYear} MareSereno. {t.footer.allRights}</p>
+          <p>&copy; {currentYear} MakiSereno. {t.footer.allRights}</p>
         </div>
       </div>
     </footer>
